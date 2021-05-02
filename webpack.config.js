@@ -11,7 +11,7 @@ module.exports =(env,argv)=>{
     mode: 'development',
     entry:"./source/app.js",
     output:{
-    path:path.join(__dirname,'public'),
+    path:path.join(__dirname,'public','dist'),
     filename:'bundle.js'
     },
 
@@ -52,6 +52,7 @@ devtool:isProduction? 'source-map': 'inline-cheap-module-source-map',
 devServer:{
     contentBase:path.join(__dirname,'public'),
     historyApiFallback:true,
+    publicPath:'/dist/'
 }
 }
 }
